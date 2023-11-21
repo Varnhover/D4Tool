@@ -12,8 +12,8 @@ from __future__ import division
 import sys
 
 # add folder contains the modules to the path
-sys.path.insert(0,'SAscore') # input the path to the "SAscore" folder here
-sys.path.insert(0,'toxicity') # input the path to the "toxicity" folder here
+sys.path.insert(0, 'SAScore') # input the path to the "SAscore" folder here
+sys.path.insert(0, 'Toxicity') # input the path to the "toxicity" folder here
 
 import argparse
 
