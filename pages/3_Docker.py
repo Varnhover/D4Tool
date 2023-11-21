@@ -31,6 +31,8 @@ import requests
 import time
 from random import random
 
+os.system('pip install torch')
+
 def download_pdb_file(pdb_id: str) -> str:
     """Download pdb file as a string from rcsb.org"""
     PDB_DIR ="/tmp/pdb/"
