@@ -22,7 +22,7 @@ st.button("Предсказать токсичность")
 if st.button:
     #os.system('streamlit run https://github.com/Varnhover/D4Tool/blob/main/ToxPred/etoxpred_predict.py')
     #os.system('git clone https://github.com/Varnhover/D4Tool')
-    #os.system('pip install joblib')
+    os.system('pip install joblib')
     #os.system('pip install sklearn')
     #os.system('python D4Tool/ToxPred/etoxpred_predict.py --datafile test.smi --modelfile dbs/etoxpred_best_model.joblib --outputfile results.csv')
     os.system('python ToxPred/etoxpred_predict.py --datafile test.smi --modelfile dbs/etoxpred_best_model.joblib --outputfile results.csv')
