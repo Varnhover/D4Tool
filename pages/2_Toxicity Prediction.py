@@ -18,5 +18,5 @@ st.button("Предсказать токсичность")
 
 #-- browser.gatherUsageStats false
 if st.button:
-    os.system('python te.py --datafile test.smi --modelfile dbs/etoxpred_best_model.joblib --outputfile results.csv')
+    os.system('python ToxPred/etoxpred_predict.py --datafile test.smi --modelfile dbs/etoxpred_best_model.joblib --outputfile results.csv')
     st.write(pd.read_csv('ToxPred/results(Rasagiline).csv'))
