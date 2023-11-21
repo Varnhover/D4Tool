@@ -87,7 +87,7 @@ class SAscore():
         import gzip
         global _fscores
         # generate the full path filename:
-        _fscores = pickle.load(gzip.open('eToxPred/fpscores.pkl.gz'))
+        _fscores = pickle.load(gzip.open('ToxPred/fpscores.pkl.gz'))
         outDict = {}
         for i in _fscores:
             for j in range(1,len(i)):
