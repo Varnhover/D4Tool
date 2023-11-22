@@ -6,3 +6,5 @@ scikit-learn
 pandas
 joblib
 torch
+tqdm
+inference
