@@ -9,3 +9,4 @@ torch
 tqdm
 inference
 seaborn
+py3Dmol
