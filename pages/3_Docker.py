@@ -128,17 +128,13 @@ except ModuleNotFoundError:
     os.system('pip install git+https://github.com/pyg-team/pytorch_geometric.git  --quiet')
 
 
-##if not os.path.exists("/D4Tool/DiffDock/esm"):
-###     %cd /D4Tool/DiffDock
-##    os.system('git clone https://github.com/facebookresearch/esm')
-###     %cd /D4Tool/DiffDock/esm
-##    os.system('git checkout ca8a710') # remove/update for more up to date code
-##    os.system('sudo pip install -e .')
-###     %cd /D4Tool/DiffDock
-
-os.system('git clone https://github.com/facebookresearch/esm')
-os.system('git checkout ca8a710') # remove/update for more up to date code
-os.system('sudo pip install -e .')
+if not os.path.exists("/D4Tool/DiffDock/esm"):
+#     %cd /D4Tool/DiffDock
+    os.system('git clone https://github.com/facebookresearch/esm')
+#     %cd /D4Tool/DiffDock/esm
+    os.system('git checkout ca8a710') # remove/update for more up to date code
+    os.system('sudo pip install -e .')
+#     %cd /D4Tool/DiffDock
 
 # %cd /D4Tool/DiffDock
 os.system('python datasets/esm_embedding_preparation.py --protein_ligand_csv /tmp/input_protein_ligand.csv --out_file data/prepared_for_esm.fasta')
