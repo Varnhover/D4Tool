@@ -6,6 +6,8 @@ scikit-learn
 joblib
 torch
 tqdm
+numpy<=1.25.2
+rich<=13.5.2
 inference
 seaborn
 py3Dmol
