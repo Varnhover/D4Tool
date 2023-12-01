@@ -18,6 +18,7 @@ st.button("Предсказать токсичность")
 #-- browser.gatherUsageStats false
 
 if st.button:
+    os.system('pip install rdkit')
     os.system('pip install joblib')
     os.system('pip install scikit-learn==1.2.2')
     os.system('pip install pandas')
