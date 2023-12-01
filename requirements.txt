@@ -8,3 +8,4 @@ tqdm
 inference
 seaborn
 py3Dmol
+pandas
