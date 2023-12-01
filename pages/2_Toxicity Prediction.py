@@ -10,7 +10,7 @@ st.set_page_config(page_title="D4Tool",page_icon="💊")
 # Определение токсичности и синтетической доступности
 """
 
-st.file_uploader("Файл .csv ваших молекул")
+csv = st.file_uploader("Файл .csv ваших молекул")
 st.button("Предсказать токсичность")
 
 #f = open('results.csv', 'w')
@@ -18,9 +18,11 @@ st.button("Предсказать токсичность")
 
 #-- browser.gatherUsageStats false
 
+if csv is None:
+    csv = "test.smi"
 
 if st.button:
     os.system('pip install joblib')
     os.system('pip install scikit-learn==1.2.2')
-    os.system('python ToxPred/etoxpred_predict.py --datafile test.smi --modelfile dbs/etoxpred_best_model.joblib --outputfile results.csv')
+    os.system(f'python ToxPred/etoxpred_predict.py --datafile {csv} --modelfile dbs/etoxpred_best_model.joblib --outputfile results.csv')
     st.write(pd.read_csv('results.csv'))
