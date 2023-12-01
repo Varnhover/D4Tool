@@ -10,16 +10,13 @@ st.set_page_config(page_title="D4Tool",page_icon="💊")
 # Определение токсичности и синтетической доступности
 """
 
-csv = st.file_uploader("Файл .csv ваших молекул")
+st.file_uploader("Файл .csv ваших молекул")
 st.button("Предсказать токсичность")
 
 #f = open('results.csv', 'w')
 #f.write("1")
 
 #-- browser.gatherUsageStats false
-
-if csv is None:
-    csv = "test.smi"
 
 if st.button:
     os.system('pip install joblib')
