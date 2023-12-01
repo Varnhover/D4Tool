@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 import os
 import joblib
 import pandas
@@ -22,4 +21,4 @@ if st.button:
     os.system('pip install joblib')
     os.system('pip install scikit-learn==1.2.2')
     os.system('python ToxPred/etoxpred_predict.py --datafile test.smi --modelfile dbs/etoxpred_best_model.joblib --outputfile results.csv')
-    st.write(pd.read_csv('results.csv'))
+    st.write(pandas.read_csv('results.csv'))
