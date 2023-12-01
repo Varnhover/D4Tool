@@ -20,5 +20,6 @@ st.button("Предсказать токсичность")
 if st.button:
     os.system('pip install joblib')
     os.system('pip install scikit-learn==1.2.2')
+    os.system('pip install pandas')
     os.system('python ToxPred/etoxpred_predict.py --datafile test.smi --modelfile dbs/etoxpred_best_model.joblib --outputfile results.csv')
     st.write(pandas.read_csv('results.csv'))
