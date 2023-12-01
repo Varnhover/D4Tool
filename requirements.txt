@@ -1,7 +1,6 @@
 rdkit
 IPython
 crem
-pandas
 scikit-learn
 joblib
 torch
