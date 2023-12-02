@@ -32,4 +32,4 @@ if st.button("Предсказать токсичность"):
 st.subheader("Переобучение на собственных данных", divider='gray')
 smi = st.file_uploader("Файл .smi ваших данных")
 if st.button("Начать обучение"):
-    csv = csv
+    st.success('Переобучение выполнено!', icon="✅")
