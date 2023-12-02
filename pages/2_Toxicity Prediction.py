@@ -9,7 +9,6 @@ st.set_page_config(page_title="D4Tool",page_icon="💊")
 # Определение токсичности и синтетической доступности
 """
 
-st.text("ЫАЫА")
 csv = st.file_uploader("Файл .csv ваших молекул")
 
 
@@ -30,7 +29,7 @@ if st.button("Предсказать токсичность"):
     os.system(f'python ToxPred/etoxpred_predict.py --datafile {csv} --modelfile dbs/etoxpred_best_model.joblib --outputfile results.csv')
     st.write(pandas.read_csv('results.csv'))
 
-st.text("Переобучение на собственных данных")
+st.title("Переобучение на собственных данных")
 smi = st.file_uploader("Файл .smi ваших данных")
 if st.button("Начать обучение"):
     csv = csv
