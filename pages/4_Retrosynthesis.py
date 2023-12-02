@@ -3,6 +3,8 @@ import time
 import os
 import streamlit as st
 os.system('pip install --quiet aizynthfinder[all]')
+from rdkit.Chem.Draw import IPythonConsole
+from aizynthfinder.interfaces import AiZynthApp
 
 st.set_page_config(page_title="D4Tool",page_icon="💊")
 """
