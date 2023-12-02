@@ -29,7 +29,7 @@ if st.button("Предсказать токсичность"):
     os.system(f'python ToxPred/etoxpred_predict.py --datafile {csv} --modelfile dbs/etoxpred_best_model.joblib --outputfile results.csv')
     st.write(pandas.read_csv('results.csv'))
 
-st.title("Переобучение на собственных данных")
+st.header("Переобучение на собственных данных")
 smi = st.file_uploader("Файл .smi ваших данных")
 if st.button("Начать обучение"):
     csv = csv
