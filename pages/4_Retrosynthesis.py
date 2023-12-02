@@ -3,6 +3,8 @@ import time
 import os
 import streamlit as st
 os.system('pip install --quiet aizynthfinder[all]')
+os.system('pip install --ignore-installed Pillow==9.0.0')
+os.system('mkdir --parents data && download_public_data data')
 
 st.set_page_config(page_title="D4Tool",page_icon="💊")
 """
