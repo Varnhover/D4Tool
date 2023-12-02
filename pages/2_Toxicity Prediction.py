@@ -10,7 +10,7 @@ st.set_page_config(page_title="D4Tool",page_icon="💊")
 """
 
 csv = st.file_uploader("Файл .csv ваших молекул")
-st.button("Предсказать токсичность")
+
 
 #f = open('results.csv', 'w')
 #f.write("1")
@@ -21,7 +21,7 @@ st.button("Предсказать токсичность")
 if csv is None:
     csv = "test.smi"
 
-if st.button:
+if st.button("Предсказать токсичность"):
     os.system('pip install rdkit')
     os.system('pip install joblib')
     os.system('pip install scikit-learn==1.2.2')
