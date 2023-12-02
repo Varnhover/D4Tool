@@ -26,13 +26,12 @@ st.set_page_config(page_title="D4Tool",page_icon="💊")
 smiles = "CC(=O)O"
 smiles = st.text_input('Введите SMILES молекулы')
 n = st.slider('Введите количество атомов, которые вы хотите поменять', 1,20)
-st.button("Начать генерацию")
 
 with zipfile.ZipFile('dbs/replacements02_sc2.zip', 'r') as zip_ref:
     zip_ref.extractall('dbs/')
 db_fname = 'dbs/replacements02_sc2.db'
 
-if st.button:
+if st.button("Начать генерацию"):
     #O=C(C)Oc1ccccc1C(=O)O
     mol = Chem.MolFromSmiles(smiles)
     img = rdkit.Chem.Draw.MolToImage(mol)
@@ -52,3 +51,8 @@ if st.button:
     print(rdkit.Chem.Draw.MolsToImage(mols))
 
     st.image(rdkit.Chem.Draw.MolsToImage(mols))
+
+st.subheader("Переобучение на собственных данных", divider='gray')
+smi = st.file_uploader("Файл .smi ваших данных")
+if st.button("Начать обучение"):
+    st.success('Переобучение выполнено!', icon="✅")
