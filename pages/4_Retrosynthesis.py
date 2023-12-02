@@ -7,10 +7,11 @@ import streamlit as st
 
 st.set_page_config(page_title="D4Tool",page_icon="💊")
 """
-# Генерация молекул по исходным SMILES
+# Ретросинтетический анализ
 """
 
-
+os.system('pip install rdkit')
+os.system('pip install aizynthfinder')
 
 st.subheader("Переобучение на собственных данных", divider='gray')
 smi = st.file_uploader("Файл .smi ваших данных")
