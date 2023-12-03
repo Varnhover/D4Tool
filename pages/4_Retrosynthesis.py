@@ -21,25 +21,15 @@ if st.button('авыаыъ'):
     rxn = RXN4ChemistryWrapper(api_key=api_key)
     rxn.create_project("rxn-d4tool")
     rxn.set_project(rxn.project_id)
-    st.write(f"The project ID is {rxn.project_id}")
-    response = rxn.predict_automatic_retrosynthesis(
-        'Brc1c2ccccc2c(Br)c2ccccc12'
-    )
-    results = rxn.get_predict_automatic_retrosynthesis_results(
-        response['prediction_id']
-    )
-    predict_automatic_retrosynthesis_response = rxn.predict_automatic_retrosynthesis(product=smiles)
-    predict_automatic_retrosynthesis_results = rxn.get_predict_automatic_retrosynthesis_results(
-        predict_automatic_retrosynthesis_response['prediction_id']
-    )
-    
-    while predict_automatic_retrosynthesis_results['status'] != 'SUCCESS':
-        predict_automatic_retrosynthesis_results = rxn.get_predict_automatic_retrosynthesis_results(
-            predict_automatic_retrosynthesis_response['prediction_id']
-        )
+    response = rxn.predict_automatic_retrosynthesis(product=smiles)
+
+    while True:
+        results = rxn.get_predict_automatic_retrosynthesis_results(response['prediction_id'])
+        if results['status'] == 'SUCCESS':
+            break
         time.sleep(30)
 
-    def collect_reactions_from_retrosynthesis(tree: Dict) -> List[str]:
+    def collect_reactions(tree):
         reactions = []
         if 'children' in tree and len(tree['children']):
             reactions.append(
@@ -49,9 +39,5 @@ if st.button('авыаыъ'):
                 ), useSmiles=True)
             )
         for node in tree['children']:
-            reactions.extend(collect_reactions_from_retrosynthesis(node))
+            reactions.extend(collect_reactions(node))
         return reactions
-    for index, tree in enumerate(predict_automatic_retrosynthesis_results['retrosynthetic_paths']):
-        print('Showing path {} with confidence {}:'.format(index, tree['confidence']))
-        for reaction in collect_reactions_from_retrosynthesis(tree):
-            display(Chem.Draw.ReactionToImage(reaction))
