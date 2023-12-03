@@ -12,7 +12,7 @@ st.set_page_config(page_title="D4Tool",page_icon="💊")
 """
 
 if st.button('авыаыъ'):
-    os.system('pip install torchdrug')
+    os.system('python3 -m pip install torchdrug')
     from torchdrug import data, datasets, utils
 
     #reaction_dataset = datasets.USPTO50k("~/molecule-datasets/",
