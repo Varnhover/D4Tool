@@ -25,16 +25,14 @@ if st.button('авыаыъ'):
     response = rxn.predict_automatic_retrosynthesis(product=smiles)
     st.write("start")
     time.sleep(5)
+    results = rxn.get_predict_automatic_retrosynthesis_results(response['prediction_id'])
+    time.sleep(5)
 
-    while True:
+    while results['status'] != 'SUCCESS':
         results = rxn.get_predict_automatic_retrosynthesis_results(response['prediction_id'])
         st.write("checking retro")
-        if results['status'] == 'SUCCESS':
-            st.write("got success")
-            st.write("end")
-            break
-            st.write("end")
         time.sleep(30)
+    st.write("got success")
 
     def collect_reactions(tree):
         reactions = []
