@@ -8,6 +8,7 @@ from typing import Dict, List
 from IPython.display import display
 from rdkit import Chem
 from rdkit.Chem import AllChem
+from rdkit.Chem import Draw
 
 st.set_page_config(page_title="D4Tool",page_icon="💊")
 """
