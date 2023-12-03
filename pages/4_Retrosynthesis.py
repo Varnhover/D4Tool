@@ -42,6 +42,6 @@ if st.button('авыаыъ'):
             reactions.extend(collect_reactions_from_retrosynthesis(node))
         return reactions
     for index, tree in enumerate(predict_automatic_retrosynthesis_results['retrosynthetic_paths']):
-    print('Showing path {} with confidence {}:'.format(index, tree['confidence']))
-    for reaction in collect_reactions_from_retrosynthesis(tree):
-        display(Chem.Draw.ReactionToImage(reaction))
+        print('Showing path {} with confidence {}:'.format(index, tree['confidence']))
+        for reaction in collect_reactions_from_retrosynthesis(tree):
+            display(Chem.Draw.ReactionToImage(reaction))
