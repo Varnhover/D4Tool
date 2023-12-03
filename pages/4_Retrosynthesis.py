@@ -23,10 +23,14 @@ if st.button('авыаыъ'):
     rxn.set_project(rxn.project_id)
     st.write(f"The project ID is {rxn.project_id}")
     predict_automatic_retrosynthesis_response = rxn.predict_automatic_retrosynthesis(product=smiles)
-    results = rxn.get_predict_automatic_retrosynthesis_results(response['prediction_id'])
+    predict_automatic_retrosynthesis_results = rxn.get_predict_automatic_retrosynthesis_results(
+        predict_automatic_retrosynthesis_response['prediction_id']
+    )
     
-    while results['status'] != 'SUCCESS':
-        results = rxn.get_predict_automatic_retrosynthesis_results(response['prediction_id'])
+    while predict_automatic_retrosynthesis_results['status'] != 'SUCCESS':
+        predict_automatic_retrosynthesis_results = rxn.get_predict_automatic_retrosynthesis_results(
+            predict_automatic_retrosynthesis_response['prediction_id']
+        )
         time.sleep(30)
 
     def collect_reactions_from_retrosynthesis(tree: Dict) -> List[str]:
