@@ -31,7 +31,9 @@ if st.button('авыаыъ'):
         st.write("checking retro")
         if results['status'] == 'SUCCESS':
             st.write("got success")
+            st.write("end")
             break
+            st.write("end")
         time.sleep(30)
 
     def collect_reactions(tree):
