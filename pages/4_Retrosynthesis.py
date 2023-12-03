@@ -24,7 +24,7 @@ if st.button('авыаыъ'):
     time.sleep(5)
     response = rxn.predict_automatic_retrosynthesis(product=smiles)
     st.write("started...")
-    time.sleep(5)
+    time.sleep(10)
     results = rxn.get_predict_automatic_retrosynthesis_results(response['prediction_id'])
     time.sleep(5)
 
