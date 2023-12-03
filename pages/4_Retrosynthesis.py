@@ -52,4 +52,4 @@ if st.button('авыаыъ'):
     for index, path in enumerate(results['retrosynthetic_paths']):
         print('Showing path {} with confidence {}:'.format(index, path['confidence']))
         for reaction in collect_reactions(path):
-            display(Chem.Draw.ReactionToImage(reaction))
+            st.image(Chem.Draw.ReactionToImage(reaction))
