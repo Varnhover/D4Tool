@@ -22,7 +22,7 @@ if st.button('авыаыъ'):
     rxn.create_project("rxn-d4tool")
     rxn.set_project(rxn.project_id)
     st.write(f"The project ID is {rxn.project_id}")
-    results = rxn4chemistry_wrapper.get_predict_automatic_retrosynthesis_results(
+    results = rxn.get_predict_automatic_retrosynthesis_results(
         response['prediction_id']
     )
     predict_automatic_retrosynthesis_response = rxn.predict_automatic_retrosynthesis(product=smiles)
