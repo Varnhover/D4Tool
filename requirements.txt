@@ -12,4 +12,3 @@ inference
 seaborn
 py3Dmol
 pandas
-torchdrug
