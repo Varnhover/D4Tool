@@ -13,14 +13,14 @@ st.set_page_config(page_title="D4Tool",page_icon="💊")
 
 if st.button('авыаыъ'):
     os.system('pip install torchdrug')
-    from torchdrug import data, datasets, utils
+    #from torchdrug import data, datasets, utils
 
-    reaction_dataset = datasets.USPTO50k("~/molecule-datasets/",
-                                         atom_feature="center_identification",
-                                         kekulize=True)
-    synthon_dataset = datasets.USPTO50k("~/molecule-datasets/", as_synthon=True,
-                                        atom_feature="synthon_completion",
-                                        kekulize=True)
+    #reaction_dataset = datasets.USPTO50k("~/molecule-datasets/",
+                                         #atom_feature="center_identification",
+                                         #kekulize=True)
+    #synthon_dataset = datasets.USPTO50k("~/molecule-datasets/", as_synthon=True,
+                                        #atom_feature="synthon_completion",
+                                        #kekulize=True)
 
 st.subheader("Переобучение на собственных данных", divider='gray')
 smi = st.file_uploader("Файл .smi ваших данных")
