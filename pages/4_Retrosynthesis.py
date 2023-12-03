@@ -23,16 +23,16 @@ if st.button('авыаыъ'):
     rxn.set_project(rxn.project_id)
     time.sleep(5)
     response = rxn.predict_automatic_retrosynthesis(product=smiles)
-    st.write("start")
+    st.write("started...")
     time.sleep(5)
     results = rxn.get_predict_automatic_retrosynthesis_results(response['prediction_id'])
     time.sleep(5)
 
     while results['status'] != 'SUCCESS':
         results = rxn.get_predict_automatic_retrosynthesis_results(response['prediction_id'])
-        st.write("checking retro")
-        time.sleep(30)
-    st.write("got success")
+        st.write("checking retro...")
+        time.sleep(15)
+    st.write("success!")
 
     def collect_reactions(tree):
         reactions = []
@@ -46,4 +46,9 @@ if st.button('авыаыъ'):
         for node in tree['children']:
             reactions.extend(collect_reactions(node))
         return reactions
-        st.write("end")
+
+    #Display the suggested routes
+    for index, path in enumerate(results['retrosynthetic_paths']):
+        print('Showing path {} with confidence {}:'.format(index, path['confidence']))
+        for reaction in collect_reactions(path):
+            display(Chem.Draw.ReactionToImage(reaction))
