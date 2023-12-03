@@ -23,6 +23,7 @@ if st.button('авыаыъ'):
     rxn.set_project(rxn.project_id)
     print(f"The project ID is {rxn.project_id}")
     predict_automatic_retrosynthesis_response = rxn.predict_automatic_retrosynthesis(product=smiles)
+    results = 0
     results['status'] = 0
     
     while results['status'] != 'SUCCESS':
