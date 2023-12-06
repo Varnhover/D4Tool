@@ -50,7 +50,7 @@ if st.button("Начать генерацию"):
     if len(mols) != 0:
         st.image(rdkit.Chem.Draw.MolsToImage(mols))
     else:
-        st.warinig("No molecules were synthesised. Maybe you should try different context radius")
+        st.warnig("No molecules were synthesised. Maybe you should try different context radius")
 
 st.subheader("Переобучение на собственных данных", divider='gray')
 smi = st.file_uploader("Файл .smi ваших данных")
