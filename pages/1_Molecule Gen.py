@@ -35,7 +35,7 @@ if st.button("Начать генерацию"):
     #O=C(C)Oc1ccccc1C(=O)O
     mol = Chem.MolFromSmiles(smiles)
     img = rdkit.Chem.Draw.MolToImage(mol)
-    #st.image(img)
+    st.image(img)
     mols = list(mutate_mol(mol, db_fname, max_size=n))
     print(mols)
     string = ''
@@ -48,8 +48,7 @@ if st.button("Начать генерацию"):
     mols = list(mutate_mol(mol, db_fname, return_mol=True, max_size=n))
     mols = [Chem.RemoveHs(i[1]) for i in mols]
     if len(mols) != 0:
-        #st.image(rdkit.Chem.Draw.MolsToImage(mols))
-        st.image(rdkit.Chem.Draw.MolsToGridImage(mols[:8], molsPerRow=4, subImgSize=(300,200)))
+        st.image(rdkit.Chem.Draw.MolsToImage(mols))
     else:
         st.warning("No molecules were synthesised. Maybe you should try different context radius. If it doesn't help, your molecule probably lacks functional groups")
 
