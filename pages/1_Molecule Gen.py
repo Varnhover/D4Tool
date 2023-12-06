@@ -35,7 +35,7 @@ if st.button("Начать генерацию"):
     #O=C(C)Oc1ccccc1C(=O)O
     mol = Chem.MolFromSmiles(smiles)
     img = rdkit.Chem.Draw.MolToImage(mol)
-    st.image(img)
+    #st.image(img)
     mols = list(mutate_mol(mol, db_fname, max_size=n))
     print(mols)
     string = ''
@@ -47,8 +47,6 @@ if st.button("Начать генерацию"):
     file.close()
     mols = list(mutate_mol(mol, db_fname, return_mol=True, max_size=n))
     mols = [Chem.RemoveHs(i[1]) for i in mols]
-    len(mols)
-    print(rdkit.Chem.Draw.MolsToImage(mols))
 
     st.image(rdkit.Chem.Draw.MolsToImage(mols))
 
