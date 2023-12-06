@@ -11,6 +11,7 @@ from rdkit.Chem.Draw import rdMolDraw2D
 from rdkit.Chem.Draw import IPythonConsole
 import zipfile
 from IPython.display import SVG, Image
+from streamlit_ketcher import st_ketcher
 IPythonConsole.molSize = (400,300)
 IPythonConsole.ipython_useSVG=True
 
@@ -25,6 +26,8 @@ st.set_page_config(page_title="D4Tool",page_icon="💊")
 """
 smiles = "CC(=O)O"
 smiles = st.text_input('Введите SMILES молекулы')
+molecule = st.text_input("Введите SMILES молекулы", DEFAULT_MOL)
+smiles = st_ketcher(molecule)
 n = st.slider('Введите количество атомов, которые вы хотите поменять', 1,20)
 
 with zipfile.ZipFile('dbs/replacements02_sc2.zip', 'r') as zip_ref:
