@@ -26,7 +26,7 @@ st.set_page_config(page_title="D4Tool",page_icon="💊")
 """
 smiles = "CC(=O)O"
 smiles = st.text_input('Введите SMILES молекулы')
-molecule = st.text_input("Введите SMILES молекулы", DEFAULT_MOL)
+molecule = st.text_input("Введите SMILES молекулы", "CCC(=O)OC")
 smiles = st_ketcher(molecule)
 n = st.slider('Введите количество атомов, которые вы хотите поменять', 1,20)
 
