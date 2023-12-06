@@ -47,8 +47,10 @@ if st.button("Начать генерацию"):
     file.close()
     mols = list(mutate_mol(mol, db_fname, return_mol=True, max_size=n))
     mols = [Chem.RemoveHs(i[1]) for i in mols]
-
-    st.image(rdkit.Chem.Draw.MolsToImage(mols))
+    if len(mols) != 0:
+        st.image(rdkit.Chem.Draw.MolsToImage(mols))
+    else:
+        st.warinig("No molecules were synthesised. Maybe you should try different context radius")
 
 st.subheader("Переобучение на собственных данных", divider='gray')
 smi = st.file_uploader("Файл .smi ваших данных")
