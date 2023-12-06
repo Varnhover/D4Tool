@@ -2,6 +2,7 @@ import random
 import time
 import os
 import streamlit as st
+from streamlit_ketcher import st_ketcher
 os.system('pip install rxn4chemistry')
 from rxn4chemistry import RXN4ChemistryWrapper
 from typing import Dict, List
