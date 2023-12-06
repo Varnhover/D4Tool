@@ -25,10 +25,9 @@ st.set_page_config(page_title="D4Tool",page_icon="💊")
 # Генерация молекул по исходным SMILES
 """
 smiles = "CC(=O)O"
-smiles = st.text_input('Введите SMILES молекулы')
 molecule = st.text_input("Введите SMILES молекулы", "CCC(=O)OC")
 smiles = st_ketcher(molecule)
-n = st.slider('Введите количество атомов, которые вы хотите поменять', 1,20)
+n = st.slider('Введите контекстный радиус', 1,20)
 
 with zipfile.ZipFile('dbs/replacements02_sc2.zip', 'r') as zip_ref:
     zip_ref.extractall('dbs/')
