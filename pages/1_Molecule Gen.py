@@ -48,7 +48,8 @@ if st.button("Начать генерацию"):
     mols = list(mutate_mol(mol, db_fname, return_mol=True, max_size=n))
     mols = [Chem.RemoveHs(i[1]) for i in mols]
 
-    st.image(rdkit.Chem.Draw.MolsToImage(mols))
+    #st.image(rdkit.Chem.Draw.MolsToImage(mols))
+    rdkit.Chem.Draw.MolsToImage(mols)
 
 st.subheader("Переобучение на собственных данных", divider='gray')
 smi = st.file_uploader("Файл .smi ваших данных")
