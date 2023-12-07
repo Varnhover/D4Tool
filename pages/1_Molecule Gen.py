@@ -55,5 +55,5 @@ if st.button("Начать генерацию"):
 st.subheader("Переобучение на собственных данных", divider='gray')
 smidb = st.file_uploader("Файл .smi ваших данных")
 if st.button("Начать обучение"):
-    os.write('crem_create_frag_db.sh input.smi fragdb_dir') 
+    os.write('crem_create_frag_db.sh input.smi fragdb_dir 32') 
     st.success('Переобучение выполнено!', icon="✅")
