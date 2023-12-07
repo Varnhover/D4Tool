@@ -53,6 +53,7 @@ if st.button("Начать генерацию"):
         st.warning("No molecules were synthesised. Maybe you should try different context radius. If it doesn't help, your molecule probably lacks functional groups")
 
 st.subheader("Переобучение на собственных данных", divider='gray')
-smi = st.file_uploader("Файл .smi ваших данных")
+smidb = st.file_uploader("Файл .smi ваших данных")
 if st.button("Начать обучение"):
+    os.write('crem_create_frag_db.sh smidb dbs') 
     st.success('Переобучение выполнено!', icon="✅")
