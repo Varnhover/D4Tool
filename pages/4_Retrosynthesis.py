@@ -13,29 +13,29 @@ from rdkit.Chem import Draw
 
 st.set_page_config(page_title="D4Tool",page_icon="💊")
 """
-# Retrosynthesis
+# Ретросинтетический анализ
 """
 
 smiles = "CC(=O)O"
-molecule = st.text_input("Enter molecule SMILES", "CCC(=O)OC")
+molecule = st.text_input("Введите SMILES молекулы", "CCC(=O)OC")
 smiles = st_ketcher(molecule)
-if st.button('start'):
+if st.button('авыаыъ'):
     api_key = "apk-35dc3d5d3a5d34065ff8f0c9cc90e8896aca7628400e8c5232f530ac7a612c7a3da4b4a0a37afdb6287126d41c7b8daddca846e6f73fc8ca566e558441aa651a8f340dff4970d7e82c734968506f6a04"
     rxn = RXN4ChemistryWrapper(api_key=api_key)
     rxn.create_project("rxn-d4tool")
     rxn.set_project(rxn.project_id)
     time.sleep(5)
     response = rxn.predict_automatic_retrosynthesis(product=smiles)
-    #st.write("started...")
+    st.write("started...")
     time.sleep(10)
     results = rxn.get_predict_automatic_retrosynthesis_results(response['prediction_id'])
     time.sleep(5)
 
     while results['status'] != 'SUCCESS':
         results = rxn.get_predict_automatic_retrosynthesis_results(response['prediction_id'])
-        #st.write("checking retro...")
+        st.write("checking retro...")
         time.sleep(15)
-    #st.write("success!")
+    st.write("success!")
 
     def collect_reactions(tree):
         reactions = []
