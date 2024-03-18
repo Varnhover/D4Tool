@@ -32,4 +32,4 @@ if st.button("Start prediction"):
 st.subheader("Retrain model with your data", divider='gray')
 smi = st.file_uploader("Your data .smi file")
 if st.button("Start retraining"):
-    st.success('Переобучение выполнено!', icon="✅")
+    st.success('Retraining done!', icon="✅")
