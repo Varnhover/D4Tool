@@ -53,6 +53,6 @@ if st.button("Generate molecules"):
         st.warning("No molecules were synthesised. Maybe you should try different context radius. If it doesn't help, your molecule probably lacks functional groups")
 
 st.subheader("Retrain AI model on your data", divider='gray')
-smidb = st.file_uploader(".smi file with your data")
+smidb = st.file_uploader("Your data .smi file")
 if st.button("Start retrainig"):
     st.success('Retraining done!', icon="✅")
