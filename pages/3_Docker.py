@@ -13,18 +13,15 @@ st.set_page_config(page_title="D4Tool",page_icon="💊")
 
 #@title PDB + SMILES input
 
-print('Please, enter PDB protein id.')
-PDB_id = st.text_input('Введите PDB id вашего лиганда') #1GOS
-print('Please, enter SMILES of the docking molecule.')
-SMILES_or_pubchem_id = st.text_input('Введите SMILES молекулы') #CCOC(=O)C1=CCN(C)CC1
+PDB_id = st.text_input('Please, enter PDB protein id') #1GOS
+SMILES_or_pubchem_id = st.text_input('Please, enter SMILES of the docking molecule.') #CCOC(=O)C1=CCN(C)CC1
 
-print('Download a tar file containing all results?(y/n)')
-dwnld = st.checkbox('Скачать tar файл с результатами?')
+dwnld = st.checkbox('Download a tar file containing all results?')
 if dwnld:
   download_results = True
 else:
   download_results = False
-st.button("Начать Докинг")
+st.button("Start docking")
 
 import os
 import requests
