@@ -7,7 +7,7 @@ import sklearn #==0.23.2
 
 st.set_page_config(page_title="D4Tool",page_icon="💊")
 """
-# Молекулярный докинг
+# Molecular docking
 """
 
 
