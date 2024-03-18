@@ -25,14 +25,14 @@ st.set_page_config(page_title="D4Tool",page_icon="💊")
 
 # D4Tool
 
-D4Tool - первая в РФ онлайн-платформа для поиска новых структур лекарств и молекулярного докинга.\n
-Генерация схожих молекул, определение токсичности, синтетической доступности и молекулярный докинг осуществляются с помощью предобученных нейронных сетей.\n
-Данный сайт представляет собой демо-версию удобного GUI, для использования полного функционала программы используйте блокнот Google Colaboratory.\n
-Весь код проекта доступен на GitHub.\n
+D4Tool is a novel online platform for searching new drug structures and molecular docking.\n
+Generation of similar molecules, determination of toxicity, synthetic availability and molecular docking are performed using pre-trained neural networks.\n
+This site is a demo-version of a user-friendly GUI, to use the full functionality of the programme use Google Colaboratory notepad instead.\n
+Project code is available on GitHub.\n
 
-* Генерация молекул по заданной структуре
-* Прогноз токсичности и синтетической доступности молекул
-* Молекулярный докинг\n
+* Generation of molecules according to a given structure
+* Prediction of toxicity and synthetic availability of molecules
+* Molecular docking\n
 
 """
 
