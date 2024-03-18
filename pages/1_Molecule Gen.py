@@ -22,18 +22,18 @@ import streamlit as st
 
 st.set_page_config(page_title="D4Tool",page_icon="💊")
 """
-# Генерация молекул по исходным SMILES
+# Molecule generation from SMILES
 """
 smiles = "CC(=O)O"
-molecule = st.text_input("Введите SMILES молекулы", "CCC(=O)OC")
+molecule = st.text_input("Please enter your molecule SMILES", "CCC(=O)OC")
 smiles = st_ketcher(molecule)
-n = st.slider('Введите контекстный радиус', 1,20)
+n = st.slider('Please enter the contex radius', 1,20)
 
 with zipfile.ZipFile('dbs/replacements02_sc2.zip', 'r') as zip_ref:
     zip_ref.extractall('dbs/')
 db_fname = 'dbs/replacements02_sc2.db'
 
-if st.button("Начать генерацию"):
+if st.button("Generate molecules"):
     #O=C(C)Oc1ccccc1C(=O)O
     mol = Chem.MolFromSmiles(smiles)
     mols = list(mutate_mol(mol, db_fname, max_size=n))
@@ -52,7 +52,7 @@ if st.button("Начать генерацию"):
     else:
         st.warning("No molecules were synthesised. Maybe you should try different context radius. If it doesn't help, your molecule probably lacks functional groups")
 
-st.subheader("Переобучение на собственных данных", divider='gray')
-smidb = st.file_uploader("Файл .smi ваших данных")
-if st.button("Начать обучение"):
-    st.success('Переобучение выполнено!', icon="✅")
+st.subheader("Retrain AI model on your data", divider='gray')
+smidb = st.file_uploader(".smi file with your data")
+if st.button("Start retrainig"):
+    st.success('Retraining done!', icon="✅")
