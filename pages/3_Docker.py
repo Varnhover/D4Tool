@@ -7,7 +7,7 @@ import requests
 import time
 from random import random
 os.system('pip install streamlit-molstar')
-from streamlit_molstar.docking import st_molstar_docking
+
 
 
 st.set_page_config(page_title="D4Tool",page_icon="💊")
