@@ -19,6 +19,7 @@ smi = st.file_uploader("Your molecules .smi file")
 
 if st.button("Start prediction"):
     print(smi)
+    print("A")
     if smi is None:
         smi = "test.smi"
     os.system(f'python ToxPred/etoxpred_predict.py --datafile {smi} --modelfile dbs/etoxpred_best_model.joblib --outputfile results.csv')
