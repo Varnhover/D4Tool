@@ -24,4 +24,5 @@ if dwnld:
   download_results = True
 else:
   download_results = False
-st.button("Start docking")
+if st.button("Start docking"):
+  st_molstar_dockng('dbs/2zy1_protein.pdb', 'dbs/docking.2zy1.0.sdf',  gt_ligand_file_path='dbs/2zy1_ligand.sdf', key="5", height=240)
