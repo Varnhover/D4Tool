@@ -6,8 +6,9 @@ import sklearn #==0.23.2
 import requests
 import time
 from random import random
-from streamlit_molstar.docking import st_molstar_docking
 os.system('pip install streamlit-molstar')
+from streamlit_molstar.docking import st_molstar_docking
+
 
 st.set_page_config(page_title="D4Tool",page_icon="💊")
 """
