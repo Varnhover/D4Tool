@@ -6,8 +6,7 @@ import sklearn #==0.23.2
 import requests
 import time
 from random import random
-from streamlit_molstar.docking import st_molstar_docking
-
+from streamlit_molstar.auto import st_molstar_auto
 
 st.set_page_config(page_title="D4Tool",page_icon="💊")
 """
@@ -25,5 +24,7 @@ if dwnld:
   download_results = True
 else:
   download_results = False
+st.write("from remote url")
+files = ["https://files.rcsb.org/download/3PTB.pdb", "https://files.rcsb.org/download/1LOL.pdb"]
+st_molstar_auto(files, key="6", height="320px")
 if st.button("Start docking"):
-  st_molstar_dockng('dbs/2zy1_protein.pdb', 'dbs/docking.2zy1.0.sdf',  gt_ligand_file_path='dbs/2zy1_ligand.sdf', key="5", height=240)
