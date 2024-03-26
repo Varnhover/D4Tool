@@ -9,7 +9,7 @@ st.set_page_config(page_title="D4Tool",page_icon="💊")
 # Toxicity and synthetic availability prediction
 """
 
-csv = st.file_uploader("Your molecules .csv file")
+csv = st.file_uploader("Your molecules .smi file")
 
 
 #f = open('results.csv', 'w')
@@ -17,16 +17,14 @@ csv = st.file_uploader("Your molecules .csv file")
 
 #-- browser.gatherUsageStats false
 
-
-if csv is None:
-    csv = "test.smi"
-
 if st.button("Start prediction"):
     os.system('pip install rdkit')
     os.system('pip install joblib')
     os.system('pip install scikit-learn==1.2.2')
     os.system('pip install pandas')
     os.system(f'python ToxPred/etoxpred_predict.py --datafile {csv} --modelfile dbs/etoxpred_best_model.joblib --outputfile results.csv')
+    if csv is None:
+        csv = "test.smi"
     st.write(pandas.read_csv('results.csv'))
 
 st.subheader("Retrain model with your data", divider='gray')
