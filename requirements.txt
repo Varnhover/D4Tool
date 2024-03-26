@@ -1,5 +1,6 @@
 streamlit
 streamlit-ketcher
+streamlit_molstar
 rdkit
 IPython
 crem
