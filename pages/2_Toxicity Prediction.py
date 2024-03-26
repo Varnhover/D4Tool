@@ -24,7 +24,7 @@ save_uploaded_file(smi)
 if st.button("Start prediction"):
     if smi is None:
         smi = "test.smi"
-    os.system(f'python ToxPred/etoxpred_predict.py --datafile smi.name --modelfile dbs/etoxpred_best_model.joblib --outputfile results.csv')
+    os.system(f'python ToxPred/etoxpred_predict.py --datafile dbs/.name --modelfile dbs/etoxpred_best_model.joblib --outputfile results.csv')
     st.write(pandas.read_csv('results.csv'))
 
 st.subheader("Retrain model with your data", divider='gray')
