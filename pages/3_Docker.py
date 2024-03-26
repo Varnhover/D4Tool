@@ -25,7 +25,7 @@ if dwnld:
 else:
   download_results = False
 
-st_molstar_auto(files, key="6", height="320px")
 if st.button("Start docking"):
   st.write("from remote url")
   files = ["https://files.rcsb.org/download/3PTB.pdb", "https://files.rcsb.org/download/1LOL.pdb"]
+  st_molstar_auto(files, key="6", height="320px")
