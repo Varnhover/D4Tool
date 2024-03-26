@@ -18,10 +18,7 @@ smi = st.file_uploader("Your molecules .smi file")
 #-- browser.gatherUsageStats false
 
 if st.button("Start prediction"):
-    os.system('pip install rdkit')
-    os.system('pip install joblib')
-    os.system('pip install scikit-learn==1.2.2')
-    os.system('pip install pandas')
+    print(smi)
     if smi is None:
         smi = "test.smi"
     os.system(f'python ToxPred/etoxpred_predict.py --datafile {smi} --modelfile dbs/etoxpred_best_model.joblib --outputfile results.csv')
