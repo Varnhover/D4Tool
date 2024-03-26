@@ -13,7 +13,7 @@ from rdkit.Chem import Draw
 
 st.set_page_config(page_title="D4Tool",page_icon="💊")
 """
-# Ретросинтетический анализ
+# Retrisynthesis prediction
 """
 
 smiles = "CC(=O)O"
